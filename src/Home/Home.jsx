@@ -4,7 +4,7 @@ import { useState } from 'react'
 function Home(){
     const [data, setData] = useState("Ram")
     const [obj, setObj] = useState({})
-    const [arr, setArr] = useState([])
+    const [arr, setArr] = useState([1,2,3,4])
     function update(){
         setData("Kumar")
         
