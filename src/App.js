@@ -1,5 +1,5 @@
 import './App.css';
-import Home from './Home/Home';
+import Navbar from './Navbar/navbar';
 import {useState,createContext} from 'react'
 
 export const UserContext = createContext()
@@ -11,7 +11,7 @@ function App() {
   return (
     <UserContext.Provider value={data}>
     <div className="App">
-      <Home data = {new_data}/>
+      <Navbar/>
     </div>
     </UserContext.Provider>
   );

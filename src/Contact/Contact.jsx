@@ -1,13 +1,14 @@
 import { useContext } from "react"
 import { UserContext } from "../App"
+import Navbar from "../Navbar/navbar"
 
 function Contact(){
     const user = useContext(UserContext)
     return (
         <>
         <div>
-            Contact: {user}
-            
+           <Navbar/>
+           Contac Us
         </div>
         </> 
     )
