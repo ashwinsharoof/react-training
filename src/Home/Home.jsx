@@ -1,8 +1,9 @@
 import './Home.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import About from '../About/About'
 
-function Home(){
+function Home(props){
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
     const [obj, setObj] = useState(0)
@@ -28,6 +29,8 @@ function Home(){
 
     return(
         <div className="home">
+            {props.data}
+            <About/>
             {loading? 
             <p>Please wait Loading</p>
             :
