@@ -1,5 +1,5 @@
 import './Home.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import About from '../About/About'
 import Navbar from '../Navbar/navbar'
@@ -11,6 +11,8 @@ function Home(props){
     const [obj, setObj] = useState(0)
     const [arr, setArr] = useState([1,2,3,4])
     const navigate = useNavigate()
+    const counter = useRef(0)
+    const [coun, setCoun] = useState(0)
 
     useEffect(() =>{
         const fetch_data = async()=>{
@@ -32,11 +34,19 @@ function Home(props){
      const about = () =>{
         navigate('/about',{state:{name:"Ram",age:21}})
      }
-
+     function handelClick(){
+        counter.current++
+        alert(counter.current)
+     }
+     function stateclick(){
+        setCoun(coun=> coun+1)
+        alert(coun)
+     }
     return(
         <div className="home">
             <Navbar/>
-            <button onClick={about}>About</button>
+            <button onClick={handelClick}>Ref</button>
+            <button onClick={stateclick}>State</button>
             {props.data}
         
             {loading? 
