@@ -1,11 +1,15 @@
 import { useContext, useEffect, useRef, useState } from "react"
 import { UserContext } from "../App"
 import Navbar from "../Navbar/navbar"
+import useFetch from "./fetch"
 
 function Contact(){
     const user = useContext(UserContext)
     const [count, setCount] = useState(1)
     const refCount = useRef(1)
+    const data = useFetch("https://jsonplaceholder.typicode.com/todos/1") // get method
+
+   
   
     function update_ref(){
         refCount.current = refCount.current*2
